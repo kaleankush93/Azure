@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "aws-to-azure-adls"
+		},
+		"AmazonS31_secretAccessKey": {
+			"value": ""
+		},
+		"MySql1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AmazonS31_properties_typeProperties_accessKeyId": {
+			"value": "AKIAI2GTPJCVVKSD5TCA"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://awsazuresa100.dfs.core.windows.net"
+		}
+	}
+}
