@@ -1,0 +1,199 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy Data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AmazonS3ReadSetting",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"formatSettings": {
+							"type": "DelimitedTextWriteSetting",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Region",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Region",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Country",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Country",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Item Type",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Item Type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Sales Channel",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Sales Channel",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Order Priority",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Order Priority",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Order Date",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Order Date",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Order ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Order ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Ship Date",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Ship Date",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Units Sold",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Units Sold",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit Price",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Unit Price",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit Cost",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Unit Cost",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Total Revenue",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Total Revenue",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Total Cost",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Total Cost",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Total Profit",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Total Profit",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
